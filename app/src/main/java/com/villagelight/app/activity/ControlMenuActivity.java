@@ -23,6 +23,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -767,7 +768,7 @@ public class ControlMenuActivity extends BaseActivity {
         mHandler.removeCallbacks(mRunnablePairBulbs);
         mHandler.postDelayed(mRunnablePairBulbs, Constants.PAIR_TIMEOUT);
         showPairDialog(getString(R.string.pair_switches_title), getString(R.string.pair_switches_tips),
-                0, getString(R.string.pair_device_end_button), new View.OnClickListener() {
+                ProjectApp.getInstance().getSyncSwitches(), getString(R.string.pair_device_end_button), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         stopPair();
@@ -800,12 +801,9 @@ public class ControlMenuActivity extends BaseActivity {
     }
 
     private void stopPair() {
-
+        mHandler.removeCallbacks(mRunnable);
         disMissPairDialog();
         LogUtils.d("stopPair...");
-
-        mHandler.removeCallbacks(mRunnablePairBulbs);
-
 
         if (isPairSwitches) {
 
