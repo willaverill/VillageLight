@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,11 +24,15 @@ import android.widget.TextView;
 import com.mylhyl.circledialog.CircleDialog;
 import com.mylhyl.circledialog.callback.ConfigButton;
 import com.mylhyl.circledialog.callback.ConfigDialog;
+import com.mylhyl.circledialog.callback.ConfigSubTitle;
 import com.mylhyl.circledialog.callback.ConfigText;
+import com.mylhyl.circledialog.callback.ConfigTitle;
 import com.mylhyl.circledialog.params.ButtonParams;
 import com.mylhyl.circledialog.params.DialogParams;
 import com.mylhyl.circledialog.params.ItemsParams;
+import com.mylhyl.circledialog.params.SubTitleParams;
 import com.mylhyl.circledialog.params.TextParams;
+import com.mylhyl.circledialog.params.TitleParams;
 import com.orhanobut.logger.Logger;
 import com.villagelight.app.ProjectApp;
 import com.villagelight.app.R;
@@ -771,21 +776,46 @@ public class EditThemeActivity extends BaseActivity {
     }
 
     private void showNotSaveDialog() {
-        String[] items = {"Save Now", "Discard Changes"};
+        ArrayList<String> menuList = new ArrayList<String>();
+        menuList.add("Save now");
+        menuList.add("Exit without saving");
         new CircleDialog.Builder()
                 .setCancelable(true)
-                .setTitle("You didn't save your changes!")
-                .setItems(items, (AdapterView<?> parent, View view, int position, long id) -> {
-                    if (position == 0) {
+                .setTitle("Save Changes")
+                .configTitle(new ConfigTitle() {
+                    @Override
+                    public void onConfig(TitleParams params) {
+                        params.height = 350;
+                        params.styleText = Typeface.BOLD;
+                    }
+                })
+                .setSubTitle("Would you like to save your changes before you go?\n\n")
+                .configSubTitle(new ConfigSubTitle() {
+                    @Override
+                    public void onConfig(SubTitleParams params) {
+                    }
+                })
+                .configDialog(new ConfigDialog() {
+                                  @Override
+                                  public void onConfig(DialogParams params) {
+                                      params.mPadding = new int[] {16, 16, 16, 16};
+                                  }
+                              }
+                )
+                .setItems(menuList, new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        if (position == 0) {
 
-                        btnSave.performClick();
-                    } else if (position == 1) {
+                            btnSave.performClick();
+                        } else if (position == 1) {
 
-                        finish();
+                            finish();
+                        }
                     }
                 })
                 .configItems((ItemsParams params) -> {
-                    params.textColor = Color.parseColor("#000000");
+                    params.textColor = Color.parseColor("#0076FF");
                 })
                 .setGravity(Gravity.CENTER)
                 .show(getSupportFragmentManager());
