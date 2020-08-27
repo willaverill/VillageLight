@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -64,6 +65,7 @@ import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.Permission;
 
 import java.io.File;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -282,28 +284,40 @@ public class MainActivity extends BaseActivity {
 
             sharedPreferences.edit().putBoolean(Key_IsFirstLaunch,false).commit();
             List<String> items = new ArrayList<>();
-            items.add("NO, teach me how this works.");
-            items.add("YES, I’m ready to get started.");
-            items.add("My system is already setup,\n" +
-                    "I’m adding another phone\n" +
-                    "to my controller.");
-            String title = "Thank you for purchasing\n" +
-                    "Light Stream.\n" +
-                    "Are your lights assembled\n" +
-                    "and ready to be setup?\n";
+            items.add("I'm new to this and would like to learn\nabout how to correctly set up my system.");
+            items.add("I'm ready to set up a controller and pair my\nbulbs and switches. (Setup Wizard)");
+            items.add("Manually connect to a controller\n(No Setup Wizard)");
+            items.add("My system is already set up, I just need to\nconnect to it with this device.");
+            String title = "Thank you for purchasing\nLight Stream";
+            String text = "Please choose from an option below\n\n";
             new CircleDialog.Builder()
                     .setCancelable(true)
+                    .configDialog(new ConfigDialog() {
+                        @Override
+                        public void onConfig(DialogParams params) {
+                            params.mPadding = new int[] {16, 16, 16, 16};
+                        }
+                    })
                     .setTitle(title)
                     .configTitle(new ConfigTitle() {
                         @Override
                         public void onConfig(TitleParams params) {
                             params.height = 350;
+                            params.styleText = Typeface.BOLD;
+                        }
+                    })
+                    .setSubTitle(text)
+                    .configSubTitle(new ConfigSubTitle() {
+                        @Override
+                        public void onConfig(SubTitleParams params) {
+
                         }
                     })
                     .configItems(new ConfigItems() {
                         @Override
                         public void onConfig(ItemsParams params) {
                             params.itemHeight = 220;
+                            params.textColor = Color.parseColor("#0076FF");
                         }
                     })
                     .setItems(items, new AdapterView.OnItemClickListener() {
