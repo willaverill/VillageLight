@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairSwitchActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:padding="8dp"
+              android:text="Name your theme"
+              android:textColor="@color/white"/>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:paddingLeft="8dp">
+
+        <EditText android:id="@+id/et_name" android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:maxLength="15"
+                  android:imeOptions="actionDone"
+                  android:singleLine="true"
+                  android:textColor="@color/white"/>
+
+        <Button android:id="@+id/btn_cancel" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Cancel" android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:padding="8dp"
+              android:text="Choose theme colors"
+              android:textColor="@color/white"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/separator"/>
+
+    <ListView android:id="@+id/lv"
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="1"
+              android:divider="#c7c7cc" android:dividerHeight="1dp"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:orientation="vertical"
+                  android:paddingLeft="8dp"
+                  android:paddingRight="8dp">
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/separator"/>
+
+
+        <LinearLayout
+            android:id="@+id/layout_select"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Fade Speed"
+                      android:textColor="@color/text_color_main"
+                      android:textSize="16sp"/>
+
+            <TextView android:id="@+id/tv_fade" android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:gravity="right|center_vertical"
+                      android:text="10 Seconds"
+                      android:textColor="@color/text_color_main"
+                      android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/separator"/>
+
+
+    </LinearLayout>
+
+    <Button android:id="@+id/btn_save" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@mipmap/btn_enable"
+            android:text="Save Settings"
+            android:textColor="@color/btn_text_color_enable"
+            android:visibility="visible"
+            tools:visibility="visible"/>
+
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.villagelight.app"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 138
+        versionName "1.3.8"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            storeFile file('key.jks')
+            storePassword "v123456"
+            keyAlias "villagelight"
+            keyPassword "l123456"
+        }
+
+        release {
+            storeFile file('key.jks')
+            storePassword "v123456"
+            keyAlias "villagelight"
+            keyPassword "l123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    useLibrary 'org.apache.http.legacy'
+
+    flavorDimensions "default"
+    productFlavors {
+        Beta {//测试
+            applicationId "com.villagelight.app.debug"
+            versionCode 149
+            versionName "1.4.9"
+
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField "String", "URL_CONTROLLER_LS3", "\"http://yourlightstream.com/LS3/updatecontrollerLS3.txt\""
+            buildConfigField "String", "URL_SWITCHER_LS3", "\"http://yourlightstream.com/LS3/updateswitchLS3.txt\""
+            buildConfigField "String", "URL_BULB_LS3", "\"http://yourlightstream.com/LS3/updatebulbfirmwareLS3.txt\""
+            buildConfigField "String", "URL_CONTROLLER_LS2", "\"http://yourlightstream.com/LS2/updatecontrollerLS2.txt\""
+            buildConfigField "String", "URL_SWITCHER_LS2", "\"http://yourlightstream.com/LS2/updateswitchLS2.txt\""
+            buildConfigField "String", "URL_BULB_LS2", "\"http://yourlightstream.com/\""
+        }
+
+        Official {//生产
+            applicationId "com.villagelight.app"
+            versionCode 143
+            versionName "1.4.3"
+
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            buildConfigField "String", "URL_CONTROLLER_LS3", "\"http://yourlightstream.com/LS3/updatecontrollerLS3.txt\""
+            buildConfigField "String", "URL_SWITCHER_LS3", "\"http://yourlightstream.com/LS3/updateswitchLS3.txt\""
+            buildConfigField "String", "URL_BULB_LS3", "\"http://yourlightstream.com/LS3/updatebulbfirmwareLS3.txt\""
+            buildConfigField "String", "URL_CONTROLLER_LS2", "\"http://yourlightstream.com/LS2/updatecontrollerLS2.txt\""
+            buildConfigField "String", "URL_SWITCHER_LS2", "\"http://yourlightstream.com/LS2/updateswitchLS2.txt\""
+            buildConfigField "String", "URL_BULB_LS2", "\"http://yourlightstream.com/\""
+        }
+    }
+
+    applicationVariants.all {
+        variant ->
+            //这个修改输出的APK路径
+            if (variant.buildType.name != "debug") {//防止AS无法安装debug包(apk)
+                variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/release")
+            }
+            variant.outputs.all {
+
+                if (variant.productFlavors[0].name == "Beta") {
+                    outputFileName = "VillageLight-v${variant.productFlavors[0].versionName}-test.apk"
+                } else if (variant.productFlavors[0].name == "Official") {
+                    outputFileName = "VillageLight-v${variant.productFlavors[0].versionName}-release.apk"
+                } else {
+                    outputFileName = "VillageLight-v${variant.productFlavors[0].versionName}-${variant.productFlavors[0].name}.apk"
+                }
+
+            }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'cn.bingoogolapple:bga-banner:2.2.6@aar'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.6'
+    implementation 'com.mylhyl:circleDialog:2.6.7'
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    implementation 'com.weigan:loopView:0.2.1'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'ch.ielse:switchbutton:1.0.1'
+    implementation 'com.yanzhenjie.permission:support:2.0.1'
+    implementation 'com.tencent.bugly:crashreport:3.0.1'
+    implementation 'com.jakewharton:butterknife:9.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

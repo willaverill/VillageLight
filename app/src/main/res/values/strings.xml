@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="new_app_name">VLC Light Stream</string>
+    <string name="scanning">Searching device</string>
+    <string name="select_device">Choose a device to connect</string>
+    <string name="button_scan">Scan device</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="link_text">View our online tutorials for product setup and use <u>here</u>.
+    </string>
+    <string name="pair_switches_title">"Pairing Switches</string>
+    <string name="pair_bulbs_title">"Pairing Bulbs</string>
+    <string name="pair_device_title">Creating Lighting Network</string>
+    <string name="pair_device_tips">All components are now pairing.\n\nSit back and relax. Big and complex projects take longer than small ones.
+        Keep pairing until your bulbs have turned green or purple.\n\nIf you have a couple of bulbs that just won’t turn green, end the pairing, go to the home screen, hit the paint bucket and set the bulbs to a color. If they change to the right color they’re paired! If they didn’t, you can pair again or replace the bulb.\n
+    </string>
+    <string name="pair_switches_tips">End pairing when the correct number of switches are indicated below.\n\n
+        To force pair a switch, unplug and plug it back in now.\n\n
+    </string>
+    <string name="pair_bulbs_tips">End pairing when all bulbs have turned green.\n\n
+        For pairing questions or troubleshooting, visit www.VLCPRO.com/LSHelp.\n\n
+    </string>
+    <string name="pair_device_end_button">End Pairing</string>
+
+    <string name="pair_switches">Pair Switches</string>
+    <string name="pair_bulbs">Pair Bulbs</string>
+    <string name="unpair_devices">Unpair Switches</string>
+    <string name="manager_bulb_channels">Manage Bulb Channels</string>
+    <string name="update_control_firmware">Update Controller Firmware</string>
+    <string name="update_switch_firmware">Update Switch Firmware</string>
+    <string name="update_bulb_firmware">Update Bulb Firmware (LS3 Bulbs only)</string>
+    <string name="calibrate_photocell">Calibrate Photocell</string>
+    <string name="setup_tutorial">Setup Tutorial</string>
+    <string name="password_protect">Password Protect</string>
+    <string name="about">About</string>
+</resources>

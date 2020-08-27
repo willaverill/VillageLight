@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_manager_device"
+    android:orientation="vertical"
+    tools:context=".activity.ManageDeviceActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="16dp"
+               android:src="@mipmap/ic_manger_device_logo"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp"
+                  android:orientation="vertical"
+                  android:paddingLeft="16dp"
+                  android:paddingRight="16dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Currently Paired Devices"
+                  android:textColor="@color/text_color_second"
+                  android:textSize="15sp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal">
+
+
+            <TextView android:id="@+id/tv_switches" android:layout_width="0dp"
+                      android:layout_height="wrap_content" android:layout_weight="1"
+                      android:gravity="center"
+                      android:textStyle="bold"
+                      android:text="0 Switch(s)"
+                      android:textColor="@color/text_color_main"
+                      android:textSize="15sp"/>
+
+            <TextView android:id="@+id/tv_bulbs" android:layout_width="0dp"
+                      android:layout_height="wrap_content" android:layout_weight="1"
+                      android:gravity="center"
+                      android:textStyle="bold"
+                      android:visibility="invisible"
+                      android:text="0 Bulbs"
+                      android:textColor="@color/text_color_main"
+                      android:textSize="15sp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_marginTop="32dp"
+                  android:layout_weight="1"
+                  android:orientation="vertical"
+                  android:paddingLeft="16dp">
+
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/separator"/>
+
+        <ListView android:id="@+id/lv"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" android:divider="#c7c7cc"
+                  android:dividerHeight="1dp"/>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/separator"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:visibility="gone"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="16dp"
+                  android:layout_marginRight="16dp"
+                  android:orientation="vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Having Trouble?"
+                  android:textColor="@color/white"
+                  android:textSize="16sp" android:textStyle="bold"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text=" View our online tutorials for product setup and use here."
+                  android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <Button android:id="@+id/btn_pair_devices" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@mipmap/btn_enable"
+            android:text="Pair Devices"
+            android:textColor="@color/btn_text_color_enable"
+            android:visibility="gone"
+            tools:visibility="gone"/>
+
+
+</LinearLayout>

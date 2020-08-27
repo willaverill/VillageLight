@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#afabab</color>
+    <color name="white">#ffffff</color>
+    <color name="btn_text_color_enable">#36445b</color>
+    <color name="btn_text_color_disable">#3e3e3e</color>
+    <color name="separator">#c7c7cc</color>
+    <color name="text_color_main">@color/white</color>
+    <color name="text_color_second">@color/separator</color>
+    <color name="text_color_third">#918f8f</color>
+
+    <color name="color_FB544B">#FB544B</color>
+    <color name="color_0076FF">#0076FF</color>
+</resources>

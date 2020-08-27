@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairFailedActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+        android:visibility="gone"
+                  android:padding="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="You’ve paired \nyour controller" android:textColor="@color/white"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:id="@+id/tv_tips"
+                  android:text="Success, now just give your controller a memorable name."
+                  android:textColor="@color/white"
+                  android:textSize="16sp"/>
+
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:text="Controller Name"
+        android:textColor="@color/white"/>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp">
+
+        <EditText android:id="@+id/et_name" android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:textColor="@color/white"/>
+
+        <Button android:id="@+id/btn_cancel" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="Cancel" android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+
+
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:id="@+id/iv_error"
+               android:src="@mipmap/pair_succeed_controller"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button android:id="@+id/btn_continue" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentBottom="true"
+            android:background="@mipmap/btn_enable"
+            android:text="Continue"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/btn_text_color_enable"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairFailedActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Manually pair\nthe controller" android:textColor="@color/white"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:text="Type in the controller ID exactly as shown under the QR code."
+                  android:textColor="@color/white"
+                  android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:src="@mipmap/ic_qr_sample"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:padding="8dp"
+              android:text="Controller ID"
+              android:textColor="@color/white"/>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:paddingLeft="10dp">
+
+        <EditText android:id="@+id/et_id" android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:imeOptions="actionDone"
+                  android:singleLine="true"
+                  android:textColor="@color/white"/>
+
+        <Button android:id="@+id/btn_cancel" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Cancel" android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+
+
+    <Button android:id="@+id/btn_continue" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/btn_enable"
+            android:text="Continue"
+            android:textColor="@color/btn_text_color_enable"/>
+
+
+</LinearLayout>

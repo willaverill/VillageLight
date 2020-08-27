@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.FirmwareControllerUpdateActivity">
+
+    <include layout="@layout/layout_title"/>
+
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:layout_marginRight="8dp"
+                      android:orientation="vertical"
+                      android:padding="8dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Controller Firmware\nUpdate Available"
+                      android:textColor="@color/white"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginTop="8dp"
+                      android:text="Please read before proceeding."
+                      android:textColor="@color/white"
+                      android:textSize="16sp"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="32dp"
+                          android:orientation="horizontal">
+
+                <View android:layout_width="2dp" android:layout_height="match_parent"
+                      android:background="#5eb309"/>
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="14dp"
+                              android:orientation="vertical">
+
+                    <ImageView android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@mipmap/clock_icon"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="8dp"
+                              android:text="3 minutes or less"
+                              android:textColor="@color/white"
+                              android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="32dp"
+                          android:orientation="horizontal">
+
+                <View android:layout_width="2dp" android:layout_height="match_parent"
+                      android:background="#5eb309"/>
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="14dp"
+                              android:orientation="vertical">
+
+                    <ImageView android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@mipmap/phone_icon"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="8dp"
+                              android:text="Don’t turn off your phone or allow the screen to lock"
+                              android:textColor="@color/white"
+                              android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="32dp"
+                          android:orientation="horizontal">
+
+                <View android:layout_width="2dp" android:layout_height="match_parent"
+                      android:background="#5eb309"/>
+
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="14dp"
+                              android:orientation="vertical">
+
+                    <ImageView android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@mipmap/stay_in_range"/>
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="8dp"
+                              android:text="Stay in range of controller"
+                              android:textColor="@color/white"
+                              android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="16dp"
+                          android:layout_marginBottom="16dp"
+                          android:gravity="bottom"
+                          android:orientation="vertical">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="Having Trouble?"
+                          android:textColor="@color/white"
+                          android:textSize="16sp" android:textStyle="bold"/>
+
+                <TextView android:id="@+id/tv_help" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/link_text"
+                          android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+
+            <Button android:id="@+id/btn_update_firmware" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="48dp"
+                    android:background="@mipmap/btn_enable"
+                    android:text="Update Controller Firmware"
+                    android:textColor="@color/btn_text_color_enable"
+                    android:visibility="visible"
+                    tools:visibility="visible"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

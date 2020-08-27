@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="16dp"
+              android:orientation="vertical"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp" tools:context=".fragment.ScheduleSimpleFragment">
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/separator"/>
+
+    <LinearLayout
+        android:id="@+id/layout_time_on"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Time On"
+                  android:textColor="#000000"
+                  android:textSize="16sp"/>
+
+        <TextView android:id="@+id/tv_time_on" android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="right|center_vertical"
+                  android:text="1:00pm"
+                  android:textColor="#36445b"
+                  android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/separator"/>
+
+    <LinearLayout
+        android:id="@+id/layout_time_off"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Time Off"
+                  android:textColor="#000000"
+                  android:textSize="16sp"/>
+
+        <TextView android:id="@+id/tv_time_off" android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="right|center_vertical"
+                  android:text="3:30pm"
+                  android:textColor="#36445b"
+                  android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/separator"/>
+
+    <LinearLayout
+        android:id="@+id/layout_select"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Use Photocell"
+                  android:textColor="#000000"
+                  android:textSize="16sp"/>
+
+        <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
+
+            <ch.ielse.view.SwitchView
+                android:id="@+id/sw_photocell"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/separator"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal" android:layout_marginTop="16dp"
+              android:text="Create a Schedule" android:textColor="#000000"
+              android:id="@+id/btn_create"
+              android:textSize="18sp"/>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="16dp"
+          android:background="#c7c7cc"/>
+
+    <ListView android:id="@+id/lv" android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:divider="#c7c7cc"
+              android:dividerHeight="1dp"/>
+
+</LinearLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.ManageChannelActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingBottom="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:padding="8dp"
+                      android:text="Select the \nbulbs to update"
+                      android:textColor="@color/white"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="32dp"
+                          android:orientation="vertical"
+                          android:paddingLeft="8dp"
+                          android:paddingRight="8dp">
+
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <com.villagelight.app.view.MyListView android:id="@+id/lv"
+                                                      android:layout_width="match_parent"
+                                                      android:layout_height="wrap_content"
+                                                      android:divider="#c7c7cc"
+                                                      android:dividerHeight="1dp"/>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginTop="32dp"
+                      android:padding="8dp"
+                      android:text="Select channel \nto assign bulbs"
+                      android:textColor="@color/white"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="16dp"
+                          android:orientation="vertical"
+                          android:paddingLeft="8dp"
+                          android:paddingRight="8dp">
+
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Change bulbs to"
+                              android:textColor="@color/text_color_main"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_channel" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="Channel 1"
+                              android:textColor="@color/text_color_main"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_select2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:text="Restore default channel (LS3 Bulbs only)"
+                              android:textColor="@color/text_color_main"
+                              android:textSize="16sp"/>
+
+                    <ImageView android:visibility="invisible" android:id="@+id/iv_check_mark"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@mipmap/check_mark_icon"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_marginTop="32dp"
+                          android:text="All bulbs must be plugged into the controller or paired switch before changing channel assignment."
+                          android:textColor="@color/text_color_main"/>
+
+
+                <Button android:id="@+id/btn_continue" android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@mipmap/btn_enable"
+                        android:text="Continue"
+                        android:textColor="@color/btn_text_color_enable"
+                        android:visibility="visible"
+                        tools:visibility="visible"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

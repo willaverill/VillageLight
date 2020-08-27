@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemView"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:clickable="true"
+    android:gravity="center_vertical">
+
+
+    <TextView android:id="@+id/item_tv_name" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:gravity="center_vertical"
+              android:paddingBottom="8dp"
+              android:text="My Theme"
+              android:paddingTop="8dp"
+              android:textColor="#000000"
+              android:textSize="16sp"/>
+
+
+    <Button
+        android:id="@+id/btn_rename"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="#8e8e93"
+        android:clickable="true"
+        android:text="Edit"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="#eb4d3d"
+        android:clickable="true"
+        android:text="Delete"
+        android:textColor="@color/white"/>
+
+</com.mcxtzhang.swipemenulib.SwipeMenuLayout>

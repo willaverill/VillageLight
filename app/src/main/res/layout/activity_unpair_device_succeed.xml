@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairSwitchActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Success!\n" android:textColor="@color/white"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginBottom="10dp"
+                  android:layout_marginTop="10dp"
+                  android:text="You have successfully unpaired your devices from this controller."
+                  android:textColor="@color/white"
+                  android:textSize="16sp"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="16dp"
+               android:src="@mipmap/ic_unpair_device_success"/>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:id="@+id/tv_switches"
+                  android:gravity="center"
+                  android:text="0 Switches" android:textColor="@color/white"
+                  android:textSize="16sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:gravity="center"
+                  android:id="@+id/tv_bulbs"
+                  android:text="0 Bulbs"
+                  android:textColor="@color/white"
+                  android:textSize="16sp"
+                  android:textStyle="bold"/>
+    </LinearLayout>
+
+    <Button android:id="@+id/btn_continue" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="120dp"
+            android:background="@mipmap/btn_enable"
+            android:text="Continue"
+            android:textColor="@color/btn_text_color_enable"
+            android:visibility="visible"
+            tools:visibility="visible"/>
+</LinearLayout>

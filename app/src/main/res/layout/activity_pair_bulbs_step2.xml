@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairSwitchActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="The bulbs are\nready to pair" android:textColor="@color/white"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginBottom="10dp"
+                  android:layout_marginTop="10dp"
+                  android:text="All bulbs currently plugged in will be paired to this controller."
+                  android:textColor="@color/white"
+                  android:textSize="16sp"/>
+    </LinearLayout>
+
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+               android:layout_gravity="center_horizontal" android:src="@mipmap/ic_pair_bulbs_step2"/>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:layout_marginTop="10dp"
+              android:padding="8dp"
+              android:text="Please make sure your bulbs are withing 25 ft. of the controller when being paired."
+              android:textColor="@color/white"
+              android:textSize="14sp"/>
+
+    <Button android:id="@+id/btn_continue" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@mipmap/btn_enable"
+            android:text="Continue"
+            android:textColor="@color/btn_text_color_enable"
+            android:visibility="visible"
+            tools:visibility="visible"/>
+</LinearLayout>

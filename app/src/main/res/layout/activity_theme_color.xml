@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efeff4"
+    android:orientation="vertical"
+    tools:context=".activity.ThemeColorActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="@color/separator"/>
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="48dp"
+                      android:layout_marginLeft="16dp"
+                      android:gravity="center_vertical"
+                      android:text="MY THEMES"
+                      android:textColor="#80000000"
+                      android:textSize="16sp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="#c7c7cc"/>
+
+            <com.villagelight.app.view.MyListView android:id="@+id/lv_my"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:divider="#c7c7cc"
+                                                  android:dividerHeight="1dp"/>
+
+            <View android:id="@+id/separator"
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="#c7c7cc"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="48dp"
+                      android:layout_marginLeft="16dp"
+                      android:layout_marginTop="32dp"
+                      android:gravity="center_vertical"
+                      android:visibility="gone"
+                      android:text="PRE-BUILT THEMES"
+                      android:textColor="#80000000"
+                      android:textSize="16sp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:visibility="gone"
+                  android:background="#c7c7cc"/>
+
+            <com.villagelight.app.view.MyListView   android:visibility="gone" android:id="@+id/lv_default"
+                                                  android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:divider="#c7c7cc"
+                                                  android:dividerHeight="1dp"/>
+
+
+            <View android:layout_width="match_parent"
+                  android:visibility="gone"
+                  android:layout_height="1dp"
+                  android:background="#c7c7cc"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairFailedActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="We’re sorry, \ntry pairing again" android:textColor="@color/white"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:id="@+id/tv_tips"
+                  android:text="Something went wrong, try pairing your switch again."
+                  android:textColor="@color/white"
+                  android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:id="@+id/iv_error"
+               android:src="@mipmap/pair_failed_controller"/>
+
+<!--    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+<!--              android:layout_marginTop="20dp"-->
+<!--              android:padding="8dp"-->
+<!--              android:text="You may want to restart the app or unplug the controller for a few seconds, then try again."-->
+<!--              android:textColor="@color/white"/>-->
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:text="Only one device can be logged onto this controller at one time.
+Please close the Light Stream App on all devices and try logging on again."
+        android:textColor="@color/white"/>
+
+    <Button android:id="@+id/btn_try_again" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/btn_enable"
+            android:text="Try Again"
+            android:textColor="@color/btn_text_color_enable"/>
+
+    <Button android:id="@+id/btn_cancel" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/btn_disable"
+            android:text="Cancel"
+            android:textColor="@color/btn_text_color_disable"/>
+
+
+</LinearLayout>

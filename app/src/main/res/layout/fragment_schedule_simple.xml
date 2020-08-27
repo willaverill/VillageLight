@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="16dp"
+              android:orientation="vertical"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp" tools:context=".fragment.ScheduleSimpleFragment">
+
+
+    <LinearLayout android:id="@+id/layout_simple_schedule" android:layout_width="match_parent"
+                  android:layout_height="76dp"
+                  android:layout_marginTop="10dp"
+                  android:orientation="vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal"
+                  android:text="Days of the Week"
+                  android:textColor="#000000"
+                  android:textSize="15sp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:orientation="horizontal"
+                      android:padding="10dp">
+
+            <CheckBox android:id="@+id/tv_monday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:gravity="center"
+                      android:checked="true"
+                      android:text="M"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+
+            <CheckBox android:id="@+id/tv_tuesday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:checked="true"
+                      android:gravity="center"
+                      android:text="T"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+
+            <CheckBox android:id="@+id/tv_wednesday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:checked="true"
+                      android:gravity="center"
+                      android:text="W"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+
+            <CheckBox android:id="@+id/tv_thursday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:checked="true"
+                      android:gravity="center"
+                      android:text="T"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+
+            <CheckBox android:id="@+id/tv_friday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:checked="true"
+                      android:gravity="center"
+                      android:text="F"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+
+
+            <CheckBox android:id="@+id/tv_saturday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:gravity="center"
+                      android:checked="true"
+                      android:text="S"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+
+            <CheckBox android:id="@+id/tv_sunday"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_marginLeft="10dp"
+                      android:background="@drawable/shape_ring_deep_blue"
+                      android:button="@null"
+                      android:gravity="center"
+                      android:text="S"
+                      android:checked="true"
+                      android:textColor="@drawable/text_color_day_of_week"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/separator"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Schedule Time 1"
+                          android:id="@+id/tv_st1"
+                          android:enabled="true"
+                          android:textColor="@drawable/text_color_enable_disable"
+                          android:textSize="16sp"/>
+
+                <FrameLayout android:layout_width="match_parent"
+                             android:layout_height="wrap_content">
+
+                    <ch.ielse.view.SwitchView
+                        app:isOpened="true"
+                        android:id="@+id/sw_schedule_time1"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:id="@+id/layout_schedule1"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_time_on"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Time On"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_time_on1" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="1:00pm"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_time_off1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Time Off"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_time_off1" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="3:30pm"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Use Photocell"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <FrameLayout android:layout_width="match_parent"
+                                 android:layout_height="wrap_content">
+
+                        <ch.ielse.view.SwitchView
+                            android:id="@+id/sw_photocell1"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_color_theme1"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Color Theme"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_color_theme1" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="All Warm Clear"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/separator"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Schedule Time 2"
+                          android:id="@+id/tv_st2"
+                          android:enabled="false"
+                          android:textColor="@drawable/text_color_enable_disable"
+                          android:textSize="16sp"/>
+
+                <FrameLayout android:layout_width="match_parent"
+                             android:layout_height="wrap_content">
+
+                    <ch.ielse.view.SwitchView
+                        app:isOpened="false"
+                        android:id="@+id/sw_schedule_time2"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:visibility="gone"
+                          android:id="@+id/layout_schedule2"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_time_on2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Time On"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_time_on2" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="1:00pm"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_time_off2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Time Off"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_time_off2" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="3:30pm"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:visibility="gone"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Use Photocell"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <FrameLayout android:layout_width="match_parent"
+                                 android:layout_height="wrap_content">
+
+                        <ch.ielse.view.SwitchView
+                            android:id="@+id/sw_photocell2"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_color_theme2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Color Theme"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_color_theme2" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="All Warm Clear"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/separator"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <TextView android:layout_width="wrap_content"
+                          android:id="@+id/tv_st3"
+                          android:layout_height="wrap_content"
+                          android:text="Schedule Time 3"
+                          android:enabled="false"
+                          android:textColor="@drawable/text_color_enable_disable"
+                          android:textSize="16sp"/>
+
+                <FrameLayout android:layout_width="match_parent"
+                             android:layout_height="wrap_content">
+
+                    <ch.ielse.view.SwitchView
+                        app:isOpened="false"
+                        android:id="@+id/sw_schedule_time3"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:visibility="gone"
+                          android:id="@+id/layout_schedule3"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_time_on3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Time On"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_time_on3" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="1:00pm"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_time_off3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Time Off"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_time_off3" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="3:30pm"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:visibility="gone"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Use Photocell"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <FrameLayout android:layout_width="match_parent"
+                                 android:layout_height="wrap_content">
+
+                        <ch.ielse.view.SwitchView
+                            android:id="@+id/sw_photocell3"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_color_theme3"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp">
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="Color Theme"
+                              android:textColor="#000000"
+                              android:textSize="16sp"/>
+
+                    <TextView android:id="@+id/tv_color_theme3" android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:gravity="right|center_vertical"
+                              android:text="All Warm Clear"
+                              android:textColor="#36445b"
+                              android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View android:layout_width="match_parent"
+                      android:layout_height="1dp"
+                      android:background="@color/separator"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

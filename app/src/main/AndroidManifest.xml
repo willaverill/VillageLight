@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.villagelight.app">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+
+    <application
+        tools:replace="android:label"
+        android:name=".ProjectApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/new_app_name"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/select_device"
+            android:screenOrientation="portrait"/>
+
+        <service android:name="cn.fly2think.blelib.RFStarBLEService"/>
+
+        <activity
+            android:name=".activity.TutorialActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairControllerQrScanActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairFailedActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairControllerManualActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+        <activity
+            android:name=".activity.PairSucceedActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.DuplicateControllerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.ControlMenuActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.ManageDeviceActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.FirmwareControllerUpdateActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.FirmwareSwitchUpdateActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.FirmwareBulbUpdateActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairSwitchActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairDevicesActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairBulbsActivityStep1"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairBulbsActivityStep2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.ManageChannelActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.ThemeColorActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.EditThemeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+        <activity
+            android:name=".activity.ColorMenuActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.ScheduleActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairDeviceSucceedActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.PairDeviceFailedActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.UnpairDeviceSucceedActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".activity.PasswordActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

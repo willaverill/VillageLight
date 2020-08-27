@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#FFf8f8f8"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="正在加载..."
+        android:textColor="#FF8F8F8F"/>
+
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+               android:layout_marginTop="16dp"
+               android:src="@mipmap/stay_in_range_gray"/>
+
+    <TextView
+        android:id="@+id/tv_switches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="0 Switch(s)"
+        android:textColor="#FF8F8F8F"
+        android:visibility="gone"/>
+
+
+    <ProgressBar
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

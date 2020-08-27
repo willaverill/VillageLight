@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairFailedActivity">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="8dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="New or duplicate \ncontroller setup"
+                  android:textColor="@color/white"
+                  android:textSize="20sp"
+                  android:textStyle="bold"/>
+
+        <TextView android:id="@+id/tv_tips" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                  android:text="To duplicate a previous controller’s settings, make sure it’s plugged in, then select it from the list below."
+                  android:textColor="@color/white"
+                  android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <View android:id="@+id/separator" android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="64dp" android:background="#c7c7cc"/>
+
+    <ListView android:id="@+id/lv" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginBottom="16dp"
+              android:divider="#c7c7cc" android:dividerHeight="1dp"
+    />
+
+</LinearLayout>

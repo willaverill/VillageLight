@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tutorial_bg"
+    android:orientation="vertical"
+    tools:context=".activity.PairSwitchActivity">
+
+    <include layout="@layout/layout_title"/>
+
+
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:padding="8dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="Connect the\nLight Stream™ bulbs"
+                      android:textColor="@color/white"
+                      android:textSize="20sp"
+                      android:textStyle="bold"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginBottom="10dp"
+                      android:layout_marginTop="10dp"
+                      android:text="Plug the switch into the bottom of the controller to pair."
+                      android:textColor="@color/white"
+                      android:textSize="16sp"/>
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginTop="32dp"
+                      android:text="1. Keep the bulbs organized. Always plug them in sequential order 1, 2, 3..."
+                      android:textColor="@color/white"
+                      android:textSize="14sp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginTop="32dp"
+                      android:text="2. Pair the lights through the controller and while the lights are on the ground."
+                      android:textColor="@color/white"
+                      android:textSize="14sp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginTop="32dp"
+                      android:text="3. Bulbs are successfully paired when the lights turn off and back on shortly after hitting pair bulbs."
+                      android:textColor="@color/white"
+                      android:textSize="14sp"/>
+
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:layout_gravity="center_horizontal" android:layout_marginTop="16dp"
+                       android:src="@mipmap/ic_pair_bulbs_step1"/>
+
+
+            <Button android:id="@+id/btn_pair_bulbs" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/btn_enable"
+                    android:text="Pair Bulbs"
+                    android:textColor="@color/btn_text_color_enable"
+                    android:visibility="visible"
+                    tools:visibility="visible"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
