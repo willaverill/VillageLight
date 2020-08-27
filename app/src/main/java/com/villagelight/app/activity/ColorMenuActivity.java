@@ -296,26 +296,37 @@ public class ColorMenuActivity extends BaseActivity {
         ColorBean colorBean = findColorByName(transFormColorPosList,"No Color");
         resultList.add(colorBean);
 
+        colorBean = findColorByName(transFormColorPosList,"Champagne");
+        resultList.add(colorBean);
+
         colorBean = findColorByName(transFormColorPosList,"Warm Clear");
         resultList.add(colorBean);
 
         colorBean = findColorByName(transFormColorPosList,"Winter White");
         resultList.add(colorBean);
 
-        colorBean = findColorByName(transFormColorPosList,"Champagne");
+        colorBean = findColorByName(transFormColorPosList,"Coral");
         resultList.add(colorBean);
 
         colorBean = findColorByName(transFormColorPosList,"Red");
         resultList.add(colorBean);
 
+        colorBean = findColorByName(transFormColorPosList,"Amber");
+        resultList.add(colorBean);
+
+        colorBean = findColorByName(transFormColorPosList,"Orange");
+        resultList.add(colorBean);
+
+        colorBean = findColorByName(transFormColorPosList,"Gold");
+        resultList.add(colorBean);
+
+        colorBean = findColorByName(transFormColorPosList,"Yellow");
+        resultList.add(colorBean);
+
         colorBean = findColorByName(transFormColorPosList,"Lime");
         resultList.add(colorBean);
 
-        colorBean = findColorByName(transFormColorPosList,"Coral");
-        resultList.add(colorBean);
-
-        colorBean = new ColorBean();
-        colorBean.setName("Empty");
+        colorBean = findColorByName(transFormColorPosList,"Mint");
         resultList.add(colorBean);
 
         colorBean = findColorByName(transFormColorPosList,"Green");
@@ -327,20 +338,17 @@ public class ColorMenuActivity extends BaseActivity {
         colorBean = findColorByName(transFormColorPosList,"Sea Breeze");
         resultList.add(colorBean);
 
-        colorBean = findColorByName(transFormColorPosList,"Mint");
-        resultList.add(colorBean);
-
-        colorBean = findColorByName(transFormColorPosList,"Blue");
-        resultList.add(colorBean);
-        colorBean = findColorByName(transFormColorPosList,"Royal");
+        colorBean = findColorByName(transFormColorPosList,"Turquoise");
         resultList.add(colorBean);
 
         colorBean = findColorByName(transFormColorPosList,"Aqua");
         resultList.add(colorBean);
 
-        colorBean = findColorByName(transFormColorPosList,"Turquoise");
+        colorBean = findColorByName(transFormColorPosList,"Blue");
         resultList.add(colorBean);
 
+        colorBean = findColorByName(transFormColorPosList,"Royal");
+        resultList.add(colorBean);
 
         colorBean = findColorByName(transFormColorPosList,"Purple");
         resultList.add(colorBean);
@@ -356,16 +364,8 @@ public class ColorMenuActivity extends BaseActivity {
         colorBean.setName("Empty");
         resultList.add(colorBean);
 
-        colorBean = findColorByName(transFormColorPosList,"Amber");
-        resultList.add(colorBean);
-
-        colorBean = findColorByName(transFormColorPosList,"Orange");
-        resultList.add(colorBean);
-
-        colorBean = findColorByName(transFormColorPosList,"Gold");
-        resultList.add(colorBean);
-
-        colorBean = findColorByName(transFormColorPosList,"Yellow");
+        colorBean = new ColorBean();
+        colorBean.setName("Empty");
         resultList.add(colorBean);
 
         return resultList;
