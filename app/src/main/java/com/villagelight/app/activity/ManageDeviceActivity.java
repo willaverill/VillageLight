@@ -997,8 +997,8 @@ public class ManageDeviceActivity extends BaseActivity {
                         .setCanceledOnTouchOutside(false)
                         .setTitle("Your Firmware is up to date")
                         .setText("You may continue to force update your controller by pressing \"force update\"below. Otherwise press cancel to exit.\n\n" +
-                                "Your current controller version: " + localVersion + "\n\n " +
-                                "2018 bulbs v.40-49 / 2019 bulbs v.50+")
+                                "Your current controller firmware version: " + localVersion + "\n\n " +
+                                "Your light stream bulb version: " + (is2019Device? "LS3 (2019+)" : "LS2 (2018)"))
                         .setPositive("Cancel", null)
                         .setNegative("Force update", new View.OnClickListener() {
                             @Override
