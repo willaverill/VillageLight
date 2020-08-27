@@ -697,12 +697,11 @@ public class EditThemeActivity extends BaseActivity {
                             .configDialog(new ConfigDialog() {
                                 @Override
                                 public void onConfig(DialogParams params) {
-//                                params.backgroundColor = Color.DKGRAY;
-//                                params.backgroundColorPress = Color.BLUE;
+                                    params.mPadding = new int[] {16, 16, 16, 16};
                                 }
                             })
                             .setTitle("Your Theme is Saved")
-                            .setText("select the paint bucket")
+                            .setText("Your Theme is saved. To see it live, select your new theme on the home\nscreen\n\n")
 //                            .setText("To see it live, select the paint bucket and choose your theme.")
                             .configText(new ConfigText() {
                                 @Override
@@ -713,9 +712,10 @@ public class EditThemeActivity extends BaseActivity {
                             .setPositive("Continue", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-
+                                    Intent intent = new Intent();
+                                    intent.putExtra("THEME", mThemeColor);
+                                    setResult(RESULT_OK, intent);
                                     finish();
-
                                 }
                             })
                             .configPositive(new ConfigButton() {

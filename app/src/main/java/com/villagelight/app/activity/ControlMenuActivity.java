@@ -1166,8 +1166,8 @@ public class ControlMenuActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1024 && resultCode == RESULT_OK) {
-//            ThemeColor themeColor = (ThemeColor) data.getSerializableExtra("theme");
-//            mTvActiveTheme.setText(themeColor.getName());
+              ThemeColor themeColor = (ThemeColor) data.getExtras().getSerializable("THEME");
+              colors.add(themeColor.getName());
         }
 
         if (requestCode == 2048 && resultCode == RESULT_OK) {

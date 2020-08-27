@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -83,6 +84,18 @@ public class ThemeColorActivity extends BaseActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1024 && resultCode == RESULT_OK) {
+            ThemeColor themeColor = (ThemeColor) data.getExtras().getSerializable("THEME");
+            Intent intent = new Intent();
+            intent.putExtra("THEME", themeColor);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         mList.clear();
@@ -109,7 +122,8 @@ public class ThemeColorActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.btn_title_right:
-                startActivity(new Intent(mContext, EditThemeActivity.class));
+                Intent intent = new Intent(mContext, EditThemeActivity.class);
+                startActivityForResult(intent, 1024);
                 break;
         }
     }
