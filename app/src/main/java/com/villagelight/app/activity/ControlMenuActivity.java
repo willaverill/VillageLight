@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -1806,31 +1807,42 @@ public class ControlMenuActivity extends BaseActivity {
 
         dismissDialog();
 
+        ArrayList<String> menuList = new ArrayList<String>();
+        menuList.add("Continue with Setup");
         new CircleDialog.Builder()
-                .setCancelable(false)
-                .setTitle("Firmware Update Available")
-                .setBodyView(R.layout.dialog_upgrade, new OnCreateBodyViewListener() {
+                .setCancelable(true)
+                .setTitle("Device Connection Successful")
+                .configTitle(new ConfigTitle() {
                     @Override
-                    public void onCreateBodyView(View view) {
-
-
-                        TextView tv_version = view.findViewById(R.id.tv_version);
-                        tv_version.setText("New Firmware Version:V" + onlineVersion + "\n" + "Your Version:V" + localVersion);
-
+                    public void onConfig(TitleParams params) {
+                        params.height = 350;
+                        params.styleText = Typeface.BOLD;
                     }
                 })
-                .setPositive("Update Now", new View.OnClickListener() {
+                .setSubTitle("Your device has been connected to\nthis controller and has been set up to\nbe used with Light Stream 2 Bulbs. If\nyou're using legacy Light Stream 3\nBulbs, you may change this setting in\nManage Devices.\n\n")
+                .configSubTitle(new ConfigSubTitle() {
                     @Override
-                    public void onClick(View v) {
-
-//                        goControlMenu();
-                        updateNow();
-
+                    public void onConfig(SubTitleParams params) {
                     }
                 })
-                .setNegative("Update Later",v->{
-
+                .configDialog(new ConfigDialog() {
+                                  @Override
+                                  public void onConfig(DialogParams params) {
+                                      params.mPadding = new int[] {16, 16, 16, 16};
+                                  }
+                              }
+                )
+                .setItems(menuList, new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        if (position == 0) {
+                        }
+                    }
                 })
+                .configItems((ItemsParams params) -> {
+                    params.textColor = Color.parseColor("#0076FF");
+                })
+                .setGravity(Gravity.CENTER)
                 .show(getSupportFragmentManager());
 
     }
