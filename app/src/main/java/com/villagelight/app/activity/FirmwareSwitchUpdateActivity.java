@@ -1,6 +1,8 @@
 package com.villagelight.app.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -12,9 +14,11 @@ import com.mylhyl.circledialog.CircleDialog;
 import com.mylhyl.circledialog.callback.ConfigButton;
 import com.mylhyl.circledialog.callback.ConfigDialog;
 import com.mylhyl.circledialog.callback.ConfigText;
+import com.mylhyl.circledialog.callback.ConfigTitle;
 import com.mylhyl.circledialog.params.ButtonParams;
 import com.mylhyl.circledialog.params.DialogParams;
 import com.mylhyl.circledialog.params.TextParams;
+import com.mylhyl.circledialog.params.TitleParams;
 import com.villagelight.app.ProjectApp;
 import com.villagelight.app.R;
 import com.villagelight.app.config.Constants;
@@ -496,47 +500,40 @@ public class FirmwareSwitchUpdateActivity extends BaseActivity {
 
     private void showPowerCycleDialog() {
 
-        String tips = "What’s your switch doing now?\n" +
-                "\n" +
-                "A. Bulbs turned off and the switch’s status light is blinking red & green? Just wait until the bulbs turn back on and you're all done with the update.\n" +
-                "\n" +
-                "\n" +
-                "Or...\n" +
-                "\n" +
-                "B. The bulbs stayed on and your switch’s status light hasn’t changed? Looks like you need to unplug, then plugin your switch. This will manually start the update.\n" +
-                "\n" +
-                "Wait until your switch’s status lights are done blinking rapid red & green, then end the process below.\n";
-
+        String tips = "Switch status light will rapidly blink red\nand green during update.\n\nWhen your switch status light is slowly\nblinking red only, then end the update.\n\n";
 
         new CircleDialog.Builder()
                 .setCanceledOnTouchOutside(false)
                 .configDialog(new ConfigDialog() {
                     @Override
                     public void onConfig(DialogParams params) {
-//                                params.backgroundColor = Color.DKGRAY;
-//                                params.backgroundColorPress = Color.BLUE;
+                        params.mPadding = new int[] {16, 16, 16, 16};
                     }
                 })
                 .setTitle("Now Broadcasting Update")
+                .configTitle(new ConfigTitle() {
+                    @Override
+                    public void onConfig(TitleParams params) {
+                        params.height = 350;
+                        params.styleText = Typeface.BOLD;
+                    }
+                })
                 .setText(tips)
                 .configText(new ConfigText() {
                     @Override
                     public void onConfig(TextParams params) {
-//                                    params.padding = new int[]{150, 10, 50, 10};
                     }
                 })
                 .setPositive("End Update", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         showWarningDialog();
-
                     }
                 })
                 .configPositive(new ConfigButton() {
                     @Override
                     public void onConfig(ButtonParams params) {
-//                                    params.backgroundColorPress = Color.RED;
+                        params.textColor = Color.parseColor("#0076FF");
                     }
                 })
                 .show(getSupportFragmentManager());
