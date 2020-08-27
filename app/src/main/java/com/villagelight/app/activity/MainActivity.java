@@ -67,6 +67,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -365,6 +366,14 @@ public class MainActivity extends BaseActivity {
                 return leftName.compareTo(rightName);
             });
             mControllers.addAll(list);
+            Collections.sort(mControllers, new Comparator<ControllerBean>() {
+                @Override
+                public int compare(ControllerBean controllerBeanOne, ControllerBean controllerBeanTwo) {
+                    String s1 = controllerBeanOne.getControllerName();
+                    String s2 = controllerBeanTwo.getControllerName();
+                    return s1.compareToIgnoreCase(s2);
+                }
+            });
         }
         mAdapter.notifyDataSetChanged();
         showIsFirstLaunch();
