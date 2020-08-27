@@ -734,8 +734,14 @@ public class ControlMenuActivity extends BaseActivity {
     private void showPairSwitchesAct() {
         new CircleDialog.Builder()
                 .setCanceledOnTouchOutside(false)
+                .configDialog(new ConfigDialog() {
+                    @Override
+                    public void onConfig(DialogParams params) {
+                        params.mPadding = new int[] {16, 16, 16, 16};
+                    }
+                })
                 .setTitle("Pair Switches")
-                .setText("Any switches powered on, in range, and currently not paired to another device will be paired at this time.")
+                .setText("All switches powered on, in range, and currently not paired to another device will be paired at this time.")
                 .setPositive("OK", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -745,6 +751,12 @@ public class ControlMenuActivity extends BaseActivity {
                     }
                 })
                 .setNegative("Cancel", null)
+                .configNegative(new ConfigButton() {
+                    @Override
+                    public void onConfig(ButtonParams params) {
+                        params.textColor = Color.parseColor("#0076FF");
+                    }
+                })
                 .show(getSupportFragmentManager());
     }
 
@@ -870,22 +882,6 @@ public class ControlMenuActivity extends BaseActivity {
 //        finish();
     }
 
-    private void showPairBulbsAct() {
-        dismissDialog();
-        new CircleDialog.Builder()
-                .setCanceledOnTouchOutside(false)
-                .setTitle("Pair Bulbs")
-                .setText("All bulbs connected directly to this controller or paired switches will be paired at this time.")
-                .setPositive("OK", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startPairBulbs();
-                    }
-                })
-                .setNegative("Cancel", null)
-                .show(getSupportFragmentManager());
-    }
-
     private void showPairBulbs() {
 
         new CircleDialog.Builder()
@@ -895,8 +891,7 @@ public class ControlMenuActivity extends BaseActivity {
                         "controller and any paired\n" +
                         "switches will be paired now.")
                 .setPositive("Ok", v->{
-
-                    showPairBulbsAct();
+                      startPairBulbs();
 //                    Intent intent = new Intent();
 //                    intent.putExtra(ManageDeviceActivity.Key_PairBulbs,true);
 //                    intent.setClass(ControlMenuActivity.this,ManageDeviceActivity.class);
@@ -906,6 +901,12 @@ public class ControlMenuActivity extends BaseActivity {
                     sharedPreferences.edit()
                             .putBoolean(MainActivity.Key_App_Get_Started,false)
                             .commit();
+                })
+                .configNegative(new ConfigButton() {
+                    @Override
+                    public void onConfig(ButtonParams params) {
+                        params.textColor = Color.parseColor("#0076FF");
+                    }
                 })
 //                .setNeutral("Cancel",null)
                 .setGravity(Gravity.CENTER)
@@ -1056,8 +1057,26 @@ public class ControlMenuActivity extends BaseActivity {
         menuList.add("YES - I have at least 1 switch");
         new CircleDialog.Builder()
                 .setCanceledOnTouchOutside(false)
+                .configDialog(new ConfigDialog() {
+                    @Override
+                    public void onConfig(DialogParams params) {
+                        params.mPadding = new int[] {16, 16, 16, 16};
+                    }
+                })
                 .setTitle("Are you using a controller\n" +
                         "AND a switch on this system?")
+                .configTitle(new ConfigTitle() {
+                    @Override
+                    public void onConfig(TitleParams params) {
+                        params.height = 350;
+                    }
+                })
+                .configItems(new ConfigItems() {
+                    @Override
+                    public void onConfig(ItemsParams params) {
+                        params.textColor = Color.parseColor("#0076FF");
+                    }
+                })
                 .setItems(menuList, new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -1329,6 +1348,12 @@ public class ControlMenuActivity extends BaseActivity {
                                     isNowCheckLastPair = false;
                                     powerOff();
                                     showAllSet();
+                                }
+                            })
+                            .configNegative(new ConfigButton() {
+                                @Override
+                                public void onConfig(ButtonParams params) {
+                                    params.textColor = Color.parseColor("#0076FF");
                                 }
                             })
                             .show(getSupportFragmentManager());
