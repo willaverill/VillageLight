@@ -94,7 +94,7 @@ public class ControlMenuActivity extends BaseActivity {
     @BindView(R.id.tv_title)
     TextView mTvTitle;
     @BindView(R.id.btn_color_selector)
-    ImageButton mBtnColorSelector;
+    TextView mBtnColorSelector;
     @BindView(R.id.tv_active_theme)
     TextView mTvActiveTheme;
     @BindView(R.id.tv_simple_schedule)
@@ -591,7 +591,7 @@ public class ControlMenuActivity extends BaseActivity {
                             sendPackets(Utils.getSendData(cmdsOn));
                             mTvActiveTheme.setText(theme_power_on);
                         }
-                        mTvActiveTheme.setTextColor(getResources().getColor(R.color.text_color_second));
+                        mTvActiveTheme.setTextColor(getResources().getColor(R.color.text_color_main));
                         mTvActiveTheme.setBackgroundResource(R.drawable.white_circle_drawable);
                         break;
                     case R.id.rbtn_power_off:
