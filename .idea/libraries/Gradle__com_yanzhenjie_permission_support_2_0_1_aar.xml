@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.yanzhenjie.permission:support:2.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-2.0.1.aar/6bae8fda50f21ce50fef98d5a9d6a875/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-2.0.1.aar/6bae8fda50f21ce50fef98d5a9d6a875/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-2.0.1.aar/6bae8fda50f21ce50fef98d5a9d6a875/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-2.0.1.aar/3b09319d09b6e2d63af84b0bc27580f1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-2.0.1.aar/3b09319d09b6e2d63af84b0bc27580f1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-2.0.1.aar/3b09319d09b6e2d63af84b0bc27580f1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

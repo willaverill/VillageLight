@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.weigan:loopView:0.2.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loopView-0.2.1.aar/1e24c4eec6035c016e073f58a35fe9c0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loopView-0.2.1.aar/1e24c4eec6035c016e073f58a35fe9c0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loopView-0.2.1.aar/1e24c4eec6035c016e073f58a35fe9c0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loopView-0.2.1.aar/b19631aa8078591d51a34f5e3d078703/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loopView-0.2.1.aar/b19631aa8078591d51a34f5e3d078703/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/loopView-0.2.1.aar/b19631aa8078591d51a34f5e3d078703/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

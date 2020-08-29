@@ -170,6 +170,15 @@ public class ControlMenuActivity extends BaseActivity {
             dismissDialog();
         }
     };
+    private int mSwitchDelay = 2000;
+
+    Runnable mRunnablePairSwitches = new Runnable() {
+        @Override
+        public void run() {
+            Log.e("dismissDialog","dismissDialog mRunnablePairSwitches");
+            stopPair();
+        }
+    };
 
     private Runnable mRunnablePairBulbs = new Runnable() {
         @Override
@@ -662,9 +671,9 @@ public class ControlMenuActivity extends BaseActivity {
                 number2 = "3";
             }
 
-            String message = "Your  device has been connected to this controller and has been set up to be used with Light Stream "+number1
+            String message = "Your device has been connected to this controller and has been set up to be used with Light Stream "+number1
                     +" Bulbs. If you're using legacy Light Stream "
-                    +number2+"Bulbs,you may change this setting in Manage Devices.";
+                    +number2+" Bulbs, you may change this setting in Manage Devices.";
             new CircleDialog.Builder()
                     .setCanceledOnTouchOutside(false)
                     .setTitle("Device Connection Successful")
@@ -762,11 +771,10 @@ public class ControlMenuActivity extends BaseActivity {
     }
 
     private void startPairSwitches() {
-
         dismissDialog();
         isPairSwitches = true;
-        mHandler.removeCallbacks(mRunnablePairBulbs);
-        mHandler.postDelayed(mRunnablePairBulbs, Constants.PAIR_TIMEOUT);
+        mHandler.removeCallbacks(mRunnablePairSwitches);
+        mHandler.postDelayed(mRunnablePairSwitches, mSwitchDelay);
         showPairDialog(getString(R.string.pair_switches_title), getString(R.string.pair_switches_tips),
                 ProjectApp.getInstance().getSyncSwitches(), getString(R.string.pair_device_end_button), new View.OnClickListener() {
                     @Override
@@ -774,7 +782,6 @@ public class ControlMenuActivity extends BaseActivity {
                         stopPair();
                     }
                 });
-
         byte[] cmdsPairStart = {(byte) 0xAA, 0x05, 0x00, (byte) ProjectApp.getInstance().getSerialNumber(),
                 (byte) 0x00, (byte) 0x00, 0x01, 0x00, 0x55};
         sendPackets(Utils.getSendData(cmdsPairStart));
