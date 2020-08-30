@@ -589,7 +589,7 @@ public class ControlMenuActivity extends BaseActivity {
                             mHandler.postDelayed(mRunnable, TIMEOUT);
                             byte[] cmdsOn = {(byte) 0xAA, 0x03, 0x00, (byte) ProjectApp.getInstance().getSerialNumber(), (byte) 0x00, (byte) 0x00, 0x00, 0x01, 0x01, 0x00, 0x55};
                             sendPackets(Utils.getSendData(cmdsOn));
-                            mTvActiveTheme.setText(theme_power_on);
+                            mTvActiveTheme.setText("  " + theme_power_on + "  ");
                         }
                         mTvActiveTheme.setTextColor(getResources().getColor(R.color.text_color_main));
                         mTvActiveTheme.setBackgroundResource(R.drawable.white_circle_drawable);
@@ -614,7 +614,7 @@ public class ControlMenuActivity extends BaseActivity {
                             byte[] cmdsOff = {(byte) 0xAA, 0x03, 0x00, (byte) ProjectApp.getInstance().getSerialNumber(), (byte) 0x00, (byte) 0x00, 0x00, 0x01, 0x00, 0x00, 0x55};
                             sendPackets(Utils.getSendData(cmdsOff));
 
-                            mTvActiveTheme.setText("OFF");
+                            mTvActiveTheme.setText("  OFF  ");
                         }
                         mTvActiveTheme.setTextColor(getResources().getColor(R.color.text_color_third));
                         mTvActiveTheme.setBackgroundResource(R.drawable.gray_cycle_drawable);
@@ -638,7 +638,7 @@ public class ControlMenuActivity extends BaseActivity {
                             mHandler.postDelayed(mRunnable, Constants.EXEC_POWER_TIMEOUT);
                             byte[] cmdsSc = {(byte) 0xAA, 0x03, 0x00, (byte) ProjectApp.getInstance().getSerialNumber(), (byte) 0x00, (byte) 0x00, 0x00, 0x01, 0x02, 0x00, 0x55};
                             sendPackets(Utils.getSendData(cmdsSc));
-                            mTvActiveTheme.setText(theme_schedule_on);
+                            mTvActiveTheme.setText("  " + theme_schedule_on + "  ");
                         }
                         mTvActiveTheme.setTextColor(getResources().getColor(R.color.text_color_second));
                         mTvActiveTheme.setBackgroundResource(R.drawable.white_circle_drawable);
@@ -1023,7 +1023,7 @@ public class ControlMenuActivity extends BaseActivity {
                             public void onItemSelected(int index) {
 
                                 theme_power_on = colors.get(index);
-                                mTvActiveTheme.setText(theme_power_on);
+                                mTvActiveTheme.setText("  " + theme_power_on + "  ");
                                 selected = index;
 
                                 showDialog("", "Updating Controller...");
@@ -1416,7 +1416,7 @@ public class ControlMenuActivity extends BaseActivity {
                             if (tc.getId() == activityTheme) {
                                 theme_power_on = tc.getName();
                                 if (mRbtnPowerOn.isChecked()) {
-                                    mTvActiveTheme.setText(theme_power_on);
+                                    mTvActiveTheme.setText("  " + theme_power_on + "  ");
                                 }
                                 break;
                             }
@@ -1495,7 +1495,7 @@ public class ControlMenuActivity extends BaseActivity {
                             if (tc.getId() == activityTheme) {
                                 theme_power_on = tc.getName();
                                 if (mRbtnPowerOn.isChecked()) {
-                                    mTvActiveTheme.setText(theme_power_on);
+                                    mTvActiveTheme.setText("  " + theme_power_on + "  ");
                                 }
                                 break;
                             }
@@ -1629,7 +1629,7 @@ public class ControlMenuActivity extends BaseActivity {
 
                     theme_schedule_on = null;
                     if (mRbtnScheduleOn.isChecked()) {
-                        mTvActiveTheme.setText(theme_schedule_on);
+                        mTvActiveTheme.setText("  " + theme_schedule_on + "  ");
                     }
                     mTvSimpleSchedule.setText("");
 
@@ -1663,7 +1663,7 @@ public class ControlMenuActivity extends BaseActivity {
 
                     mTvUpcomingTheme.setText("");
                     if (mRbtnScheduleOn.isChecked()) {
-                        mTvActiveTheme.setText("");
+                        mTvActiveTheme.setText("    ");
                     }
 
                     if (customSchedule.isPhotocell()) {
@@ -1684,7 +1684,7 @@ public class ControlMenuActivity extends BaseActivity {
                             if (tc.getId() == customSchedule.getTheme()) {
                                 theme_schedule_on = tc.getName();
                                 if (mRbtnScheduleOn.isChecked()) {
-                                    mTvActiveTheme.setText(theme_schedule_on);
+                                    mTvActiveTheme.setText("  " + theme_schedule_on + "  ");
                                 }
                                 break;
                             }
@@ -1995,7 +1995,7 @@ public class ControlMenuActivity extends BaseActivity {
             if (tc.getId() == sThemeId) {
                 theme_schedule_on = tc.getName();
                 if (mRbtnScheduleOn.isChecked()) {
-                    mTvActiveTheme.setText(theme_schedule_on);
+                    mTvActiveTheme.setText("  " + theme_schedule_on + "  ");
                 }
                 break;
             }
