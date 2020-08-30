@@ -12,14 +12,14 @@
     <list default="true" id="5ff5fa38-51cd-4bee-a229-b0d78409e5c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/villagelight/app/activity/ControlMenuActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/villagelight/app/activity/ControlMenuActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_control_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_control_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/villagelight/app/activity/EditThemeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/villagelight/app/activity/EditThemeActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,21 +133,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1358" height="155" key="GridCell.Tab.0.bottom" timestamp="1598745071948">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1358" height="155" key="GridCell.Tab.0.bottom" timestamp="1598816009773">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
+    <state width="1358" height="155" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1598816009773" />
     <state width="1358" height="155" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1598745071948" />
-    <state width="1358" height="155" key="GridCell.Tab.0.center" timestamp="1598745071948">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1358" height="155" key="GridCell.Tab.0.center" timestamp="1598816009772">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
+    <state width="1358" height="155" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1598816009772" />
     <state width="1358" height="155" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1598745071948" />
-    <state width="1358" height="155" key="GridCell.Tab.0.left" timestamp="1598745071947">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1358" height="155" key="GridCell.Tab.0.left" timestamp="1598816009772">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
+    <state width="1358" height="155" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1598816009772" />
     <state width="1358" height="155" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1598745071947" />
-    <state width="1358" height="155" key="GridCell.Tab.0.right" timestamp="1598745071948">
-      <screen x="0" y="23" width="1440" height="827" />
+    <state width="1358" height="155" key="GridCell.Tab.0.right" timestamp="1598816009773">
+      <screen x="0" y="23" width="1440" height="826" />
     </state>
+    <state width="1358" height="155" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1598816009773" />
     <state width="1358" height="155" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1598745071948" />
     <state x="492" y="296" key="com.intellij.ide.util.TipDialog" timestamp="1598754183728">
       <screen x="0" y="23" width="1440" height="826" />

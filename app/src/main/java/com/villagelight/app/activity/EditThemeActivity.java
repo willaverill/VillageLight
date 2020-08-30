@@ -85,6 +85,7 @@ public class EditThemeActivity extends BaseActivity {
     private List<Byte> mRecvs = new ArrayList<>();
     private int mLen;
     private boolean isEdit;
+    private boolean fadeSpeedEnabled = true;
     private int themeColorIndex;
     private Handler mHandler = new Handler();
     private Runnable mRunnable = new Runnable() {
@@ -316,6 +317,22 @@ public class EditThemeActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        int channel = 0;
+        fadeSpeedEnabled = true;
+        while (channels.get(channel).getColorNo2() == 0x00000000 && channels.get(channel).getColorNo3() == 0x00000000) {
+            channel++;
+            if (channel == channels.size()) {
+                break;
+            }
+        }
+        if (channel == channels.size()) {
+            fadeSpeedEnabled = false;
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         mHandler.removeCallbacks(mRunnable);
@@ -336,18 +353,20 @@ public class EditThemeActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.layout_select:
-                SelectDialog.getInstance()
-                        .setItems(fades)
-                        .setInitPosition(fadeSelectedIndex)
-                        .setListener(new OnItemSelectedListener() {
-                            @Override
-                            public void onItemSelected(int index) {
+                if (fadeSpeedEnabled) {
+                    SelectDialog.getInstance()
+                            .setItems(fades)
+                            .setInitPosition(fadeSelectedIndex)
+                            .setListener(new OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(int index) {
 
-                                fadeSelectedIndex = index;
-                                mTvFade.setText(fades.get(index));
-                            }
-                        })
-                        .show(getSupportFragmentManager(), "SelectDialog");
+                                    fadeSelectedIndex = index;
+                                    mTvFade.setText(fades.get(index));
+                                }
+                            })
+                            .show(getSupportFragmentManager(), "SelectDialog");
+                }
                 break;
             case R.id.btn_save:
 
