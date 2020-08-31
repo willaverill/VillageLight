@@ -67,6 +67,8 @@ public class EditThemeActivity extends BaseActivity {
     EditText mEtName;
     @BindView(R.id.lv)
     ListView mLv;
+    @BindView(R.id.tv_fade_title)
+    TextView mTvFadeTitle;
     @BindView(R.id.tv_fade)
     TextView mTvFade;
     @BindView(R.id.btn_save)
@@ -321,6 +323,8 @@ public class EditThemeActivity extends BaseActivity {
         super.onResume();
         int channel = 0;
         fadeSpeedEnabled = true;
+        mTvFadeTitle.setTextColor(getResources().getColor(R.color.text_color_main));
+        mTvFade.setTextColor(getResources().getColor(R.color.text_color_main));
         while (channels.get(channel).getColorNo2() == 0x00000000 && channels.get(channel).getColorNo3() == 0x00000000) {
             channel++;
             if (channel == channels.size()) {
@@ -329,6 +333,8 @@ public class EditThemeActivity extends BaseActivity {
         }
         if (channel == channels.size()) {
             fadeSpeedEnabled = false;
+            mTvFadeTitle.setTextColor(getResources().getColor(R.color.text_color_third));
+            mTvFade.setTextColor(getResources().getColor(R.color.text_color_third));
         }
     }
 

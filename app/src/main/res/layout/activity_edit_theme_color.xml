@@ -78,9 +78,10 @@
             android:paddingBottom="8dp"
             android:paddingTop="8dp">
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <TextView android:id="@+id/tv_fade_title"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:text="Fade Speed"
-                      android:textColor="@color/text_color_main"
+                      android:textColor="@color/text_color_third"
                       android:textSize="16sp"/>
 
             <TextView android:id="@+id/tv_fade" android:layout_width="0dp"
@@ -88,7 +89,7 @@
                       android:layout_weight="1"
                       android:gravity="right|center_vertical"
                       android:text="10 Seconds"
-                      android:textColor="@color/text_color_main"
+                      android:textColor="@color/text_color_third"
                       android:textSize="16sp"/>
 
         </LinearLayout>
