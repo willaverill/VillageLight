@@ -1173,6 +1173,7 @@ public class ControlMenuActivity extends BaseActivity {
         if (requestCode == 1024 && resultCode == RESULT_OK) {
               ThemeColor themeColor = (ThemeColor) data.getExtras().getSerializable("THEME");
               colors.add(themeColor.getName());
+              mThemeColors.add(themeColor);
         }
 
         if (requestCode == 2048 && resultCode == RESULT_OK) {
